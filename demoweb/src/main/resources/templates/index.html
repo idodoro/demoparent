@@ -1,0 +1,23 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+    <h3>
+        index
+    </h3>
+    <h3>
+        <span th:text="${helloparam}"></span>
+    </h3>
+    <h3>
+        name:<span th:text="${product?.name}"></span><br>
+        price:<span th:text="${product?.price}"></span>
+    </h3>
+    <h3>
+        <span th:text="${error}"></span>
+    </h3>
+</body>
+</html>
