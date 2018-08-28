@@ -16,8 +16,13 @@ public class Tut6Client {
 
     int start = 0;
 
+    StopWatch total = new StopWatch();
+
     @Scheduled(fixedDelay = 1000, initialDelay = 500)
     public void send() {
+        if(start == 0){
+            total.start();
+        }
         System.out.println(" [x] Requesting fib(" + start + ")");
         StopWatch watch = new StopWatch();
         watch.start();
@@ -27,5 +32,9 @@ public class Tut6Client {
 
         System.out.println(" [.] Got '" + response + "'");
         System.out.println(" [.] duration time " + watch.getTotalTimeSeconds() + "s");
+        if(start==45){
+            total.stop();
+            System.out.println(" [#####] duration time " + total.getTotalTimeSeconds() + "s");
+        }
     }
 }
